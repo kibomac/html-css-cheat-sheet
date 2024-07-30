@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  header {
+    background-color: #333;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+  }
+  
+  main {
+    padding: 1rem 2rem;
+  }
+  
+  section {
+    margin-bottom: 2rem;
+  }
+  
+  h2 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 0.5rem;
+  }
+  
+  pre {
+    background-color: #e4e4e4;
+    padding: 1rem;
+    overflow-x: auto;
+  }
+  
+  code {
+    display: block;
+  }
+  

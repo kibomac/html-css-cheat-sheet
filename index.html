@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Selectors and Specificity</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>CSS Selectors and Specificity</h1>
+  </header>
+  <main>
+    <section id="selectors">
+      <h2>Selectors</h2>
+      <h3>Type Selector</h3>
+      <p>Targets all elements of a given type.</p>
+      <pre><code>p { color: blue; }</code></pre>
+
+      <h3>Class Selector</h3>
+      <p>Targets elements with a specific class.</p>
+      <pre><code>.example { color: red; }</code></pre>
+
+      <h3>ID Selector</h3>
+      <p>Targets an element with a specific ID.</p>
+      <pre><code>#unique { color: green; }</code></pre>
+
+      <h3>Attribute Selector</h3>
+      <p>Targets elements with a specific attribute.</p>
+      <pre><code>[type="text"] { color: orange; }</code></pre>
+    </section>
+
+    <section id="specificity">
+      <h2>Specificity</h2>
+      <p>Specificity determines which CSS rule is applied by the browser when multiple rules could apply to the same element. It is calculated based on the types of selectors used:</p>
+      <ul>
+        <li>Inline styles: Highest specificity (e.g., <code>style="color: blue;"</code>)</li>
+        <li>ID selectors: Second highest (<code>#id</code>)</li>
+        <li>Class, attribute, and pseudo-class selectors: Next (<code>.class</code>, <code>[attribute]</code>, <code>:hover</code>)</li>
+        <li>Type selectors and pseudo-elements: Lowest (<code>element</code>, <code>::before</code>)</li>
+      </ul>
+
+      <h3>Example Calculation</h3>
+      <pre><code>
+Inline styles: 1000
+ID selectors: 100
+Class selectors: 10
+Type selectors: 1
+      </code></pre>
+
+      <h3>Example</h3>
+      <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;style&gt;
+  p { color: blue; } /* specificity: 1 */
+  .example { color: red; } /* specificity: 10 */
+  #unique { color: green; } /* specificity: 100 */
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;p class="example" id="unique"&gt;Text&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+      </code></pre>
+      <p>In this example, the text will be green because the ID selector has the highest specificity.</p>
+    </section>
+  </main>
+  <footer>
+    <p>Documenting CSS selectors and specificity</p>
+  </footer>
+</body>
+</html>
