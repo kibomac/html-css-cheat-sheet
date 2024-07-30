@@ -1,74 +1,351 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CSS Selectors and Specificity</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header>
-    <h1>CSS Selectors and Specificity</h1>
-  </header>
-  <main>
-    <section id="selectors">
-      <h2>Selectors</h2>
-      <h3>Type Selector</h3>
-      <p>Targets all elements of a given type.</p>
-      <pre><code>p { color: blue; }</code></pre>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Development Documentation</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Web Development Documentation</h1>
+      <nav>
+        <ul>
+          <li><a href="#html-elements">HTML Elements</a></li>
+          <li><a href="#html-structure">HTML Structure</a></li>
+          <li><a href="#html-tables">HTML Tables</a></li>
+          <li><a href="#semantic-html">Semantic HTML</a></li>
+          <li><a href="#fundamentals-css">Fundamentals of CSS</a></li>
+          <li><a href="#css-selectors">Selectors and Visual Rules</a></li>
+          <li><a href="#box-model">The Box Model</a></li>
+          <li><a href="#display-positioning">Display and Positioning</a></li>
+          <li><a href="#colors">Colors in CSS</a></li>
+          <li><a href="#css-properties">Common CSS Properties</a></li>
+          <li><a href="#examples">Working Examples</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="html-elements">
+        <h2>HTML: Elements</h2>
+        <p>
+          HTML elements are the basic building blocks of web pages. They consist
+          of a start tag, content, and an end tag.
+        </p>
+        <pre><code>&lt;p&gt;This is a paragraph.&lt;/p&gt;</code></pre>
+      </section>
 
-      <h3>Class Selector</h3>
-      <p>Targets elements with a specific class.</p>
-      <pre><code>.example { color: red; }</code></pre>
+      <section id="html-structure">
+        <h2>HTML: Structure</h2>
+        <p>HTML documents have a structured layout including the following:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Tag</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>&lt;!DOCTYPE&gt;</td>
+              <td>Defines the document type and HTML version</td>
+            </tr>
+            <tr>
+              <td>&lt;html&gt;</td>
+              <td>Root element of an HTML document</td>
+            </tr>
+            <tr>
+              <td>&lt;head&gt;</td>
+              <td>Contains meta-information about the document</td>
+            </tr>
+            <tr>
+              <td>&lt;title&gt;</td>
+              <td>
+                Sets the title of the document, shown in the browser's title bar
+                or tab
+              </td>
+            </tr>
+            <tr>
+              <td>&lt;body&gt;</td>
+              <td>
+                Contains the content of the document, such as text, images, and
+                links
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello, world!&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </section>
 
-      <h3>ID Selector</h3>
-      <p>Targets an element with a specific ID.</p>
-      <pre><code>#unique { color: green; }</code></pre>
+      <section id="html-tables">
+        <h2>HTML: Tables</h2>
+        <p>
+          HTML tables organize data into rows and columns using the
+          <code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code>,
+          <code>&lt;th&gt;</code>, and <code>&lt;td&gt;</code> tags.
+        </p>
+        <pre><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Header 1&lt;/th&gt;
+    &lt;th&gt;Header 2&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Data 1&lt;/td&gt;
+    &lt;td&gt;Data 2&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+      </section>
 
-      <h3>Attribute Selector</h3>
-      <p>Targets elements with a specific attribute.</p>
-      <pre><code>[type="text"] { color: orange; }</code></pre>
-    </section>
+      <section id="semantic-html">
+        <h2>Semantic HTML</h2>
+        <p>
+          Semantic HTML introduces meaning to the web page rather than just
+          presentation. Examples include <code>&lt;header&gt;</code>,
+          <code>&lt;footer&gt;</code>, <code>&lt;article&gt;</code>, and
+          <code>&lt;section&gt;</code>.
+        </p>
+        <pre><code>&lt;header&gt;...&lt;/header&gt;
+&lt;section&gt;...&lt;/section&gt;
+&lt;article&gt;...&lt;/article&gt;
+&lt;footer&gt;...&lt;/footer&gt;</code></pre>
+      </section>
 
-    <section id="specificity">
-      <h2>Specificity</h2>
-      <p>Specificity determines which CSS rule is applied by the browser when multiple rules could apply to the same element. It is calculated based on the types of selectors used:</p>
-      <ul>
-        <li>Inline styles: Highest specificity (e.g., <code>style="color: blue;"</code>)</li>
-        <li>ID selectors: Second highest (<code>#id</code>)</li>
-        <li>Class, attribute, and pseudo-class selectors: Next (<code>.class</code>, <code>[attribute]</code>, <code>:hover</code>)</li>
-        <li>Type selectors and pseudo-elements: Lowest (<code>element</code>, <code>::before</code>)</li>
-      </ul>
+      <section id="fundamentals-css">
+        <h2>Fundamentals of CSS</h2>
+        <p>
+          CSS (Cascading Style Sheets) describes how HTML elements are to be
+          displayed. It controls layout, colors, fonts, and more.
+        </p>
+        <pre><code>body {
+  background-color: lightblue;
+  font-family: Arial, sans-serif;
+}</code></pre>
+      </section>
 
-      <h3>Example Calculation</h3>
-      <pre><code>
-Inline styles: 1000
+      <section id="css-selectors">
+        <h2>Selectors and Visual Rules</h2>
+        <p>
+          CSS selectors target HTML elements to apply styles. Specificity
+          determines which styles are applied when multiple rules match the same
+          element.
+        </p>
+        <h3>Selectors</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Selector</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Type Selector:</td>
+              <td><code>p { color: blue; }</code></td>
+            </tr>
+            <tr>
+              <td>Class Selector:</td>
+              <td><code>.example { color: red; }</code></td>
+            </tr>
+            <tr>
+              <td>ID Selector:</td>
+              <td><code>#unique { color: green; }</code></td>
+            </tr>
+            <tr>
+              <td>Attribute Selector:</td>
+              <td><code>[type="text"] { color: orange; }</code></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Specificity Calculation</h3>
+        <pre><code>Inline styles: 1000
 ID selectors: 100
 Class selectors: 10
-Type selectors: 1
-      </code></pre>
+Type selectors: 1</code></pre>
+      </section>
 
-      <h3>Example</h3>
-      <pre><code>
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;style&gt;
-  p { color: blue; } /* specificity: 1 */
-  .example { color: red; } /* specificity: 10 */
-  #unique { color: green; } /* specificity: 100 */
-&lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;p class="example" id="unique"&gt;Text&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-      </code></pre>
-      <p>In this example, the text will be green because the ID selector has the highest specificity.</p>
-    </section>
-  </main>
-  <footer>
-    <p>Documenting CSS selectors and specificity</p>
-  </footer>
-</body>
+      <section id="box-model">
+        <h2>The Box Model</h2>
+        <p>
+          The CSS box model describes the rectangular boxes generated for
+          elements in the document tree and is made up of margins, borders,
+          padding, and the actual content.
+        </p>
+        <pre><code>div {
+  width: 300px;
+  padding: 10px;
+  border: 5px solid black;
+  margin: 20px;
+}</code></pre>
+        <p>The box model is represented by:</p>
+        <ul>
+          <li>
+            Content: The actual content of the box, where text and images
+            appear.
+          </li>
+          <li>
+            Padding: Clears an area around the content. The padding is
+            transparent.
+          </li>
+          <li>Border: A border that goes around the padding and content.</li>
+          <li>
+            Margin: Clears an area outside the border. The margin is
+            transparent.
+          </li>
+        </ul>
+      </section>
+
+      <section id="display-positioning">
+        <h2>Display and Positioning</h2>
+        <p>
+          CSS offers several properties to control the layout and positioning of
+          elements, such as <code>display</code>, <code>position</code>,
+          <code>float</code>, and <code>clear</code>.
+        </p>
+        <h3>Display</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>key word</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>block</code></td>
+              <td>The element is displayed as a block-level
+            element.</td>
+            </tr>
+            <tr>
+              <td><code>inline</code></td>
+              <td>The element is displayed as an inline-level
+            element.</td>
+            </tr>
+            <tr>
+              <td><code>none</code></td>
+              <td>The element is not displayed.</td>
+            </tr>
+            </tbody>
+        </table>
+        <h3>Positioning</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>key word</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>static</code></td>
+              <td>Default position; elements are positioned
+            according to the normal flow of the document.</td>
+            </tr>
+        <tr>
+              <td><code>relative</code></td>
+              <td>Positioned relative to its normal position.</td>
+            </tr>
+            <tr>
+              <td><code>absolute</code></td>
+              <td>Positioned relative to the nearest positioned
+            ancestor.</td>
+            </tr>
+        <tr>
+              <td><code>fixed</code></td>
+              <td>Positioned relative to the browser window.</td>
+            </tr>
+            </tbody>
+        </table>
+        <pre><code>div {
+  position: relative;
+  top: 10px;
+  left: 20px;
+}</code></pre>
+      </section>
+
+      <section id="colors">
+        <h2>Colors in CSS</h2>
+        <p>
+          Colors in CSS can be specified using color names, HEX values, RGB
+          values, RGBA values, HSL values, and HSLA values.
+        </p>
+        <h3>Color Names</h3>
+        <pre><code>body {
+  color: red;
+}</code></pre>
+        <h3>HEX Values</h3>
+        <pre><code>body {
+  color: #ff0000;
+}</code></pre>
+        <h3>RGB Values</h3>
+        <pre><code>body {
+  color: rgb(255, 0, 0);
+}</code></pre>
+        <h3>RGBA Values</h3>
+        <pre><code>body {
+  color: rgba(255, 0, 0, 0.5);
+}</code></pre>
+        <h3>HSL Values</h3>
+        <pre><code>body {
+  color: hsl(0, 100%, 50%);
+}</code></pre>
+        <h3>HSLA Values</h3>
+        <pre><code>body {
+  color: hsla(0, 100%, 50%, 0.5);
+}</code></pre>
+      </section>
+
+      <section id="css-properties">
+        <h2>Common CSS Properties</h2>
+        <p>
+          CSS properties define how elements are displayed. Here are some common
+          properties:
+        </p>
+        <ul>
+          <li><code>color</code>: Sets the text color</li>
+          <li><code>background-color</code>: Sets the background color</li>
+          <li><code>margin</code>: Sets the outer space around an element</li>
+          <li><code>padding</code>: Sets the inner space within an element</li>
+          <li><code>font-size</code>: Sets the size of the text</li>
+          <li><code>border</code>: Sets the border around an element</li>
+        </ul>
+      </section>
+
+      <section id="examples">
+        <h2>Working Examples</h2>
+        <h3>HTML Table Example</h3>
+        <p>Below is an example of an HTML table:</p>
+        <table>
+          <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+          </tr>
+          <tr>
+            <td>Data 1</td>
+            <td>Data 2</td>
+          </tr>
+        </table>
+        <h3>CSS Selectors Example</h3>
+        <p>Below are examples of different CSS selectors:</p>
+        <div class="example" id="unique">
+          This is a div with class "example" and id "unique".
+        </div>
+        <input
+          type="text"
+          placeholder="This input uses an attribute selector."
+        />
+      </section>
+    </main>
+    <footer>
+      <p>Web Development Documentation</p>
+    </footer>
+  </body>
 </html>

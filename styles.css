@@ -1,38 +1,138 @@
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: #0073e6;
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+nav {
+  background-color: #155ba0;
+  padding: 0.5rem 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-weight: bold;
+  color: #0073e6;
+}
+
+nav ul li {
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  display: block;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+  background-color: #003f7f;
+  color: #ffffff;
+  border-radius: 5px;
+}
+
+main {
+  padding: 1rem 2rem;
+}
+
+section {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: #fff3e0;
+  border-left: 5px solid #0073e6;
+  border-radius: 5px;
+}
+
+h2 {
+  border-bottom: 2px solid #333;
+  padding-bottom: 0.5rem;
+  color: #0073e6;
+}
+
+h3 {
+  color: #ff4500;
+}
+
+pre {
+  background-color: #e4e4e4;
+  padding: 1rem;
+  overflow-x: auto;
+  border-radius: 5px;
+}
+
+code {
+  display: block;
+  color: #d32f2f;
+}
+
+ul {
+  background-color: #ffebcd;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+footer {
+  background-color: #0073e6;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/* Examples */
+.example {
+  color: red;
+}
+
+#unique {
+  color: green;
+}
+
+input[type="text"] {
+  color: orange;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
   }
-  
-  header {
-    background-color: #333;
-    color: white;
-    padding: 1rem 0;
-    text-align: center;
+
+  nav ul li {
+    margin: 0.5rem 0;
   }
-  
-  main {
-    padding: 1rem 2rem;
-  }
-  
-  section {
-    margin-bottom: 2rem;
-  }
-  
-  h2 {
-    border-bottom: 2px solid #333;
-    padding-bottom: 0.5rem;
-  }
-  
-  pre {
-    background-color: #e4e4e4;
-    padding: 1rem;
-    overflow-x: auto;
-  }
-  
-  code {
-    display: block;
-  }
-  
+}
